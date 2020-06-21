@@ -1,36 +1,40 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { Global } from '@emotion/core';
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import useSiteMetadata from '../hooks/use-sitemetadata';
 
-import Header from "./header"
-import "./layout.css"
+import Header from './header';
+// import './layout.css';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const { title, description } = useSiteMetadata();
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Global
+        styles={theme => ({
+          '*': {
+            boxSizing: 'border-box',
+          },
+        })}
+      />
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <Header siteTitle={title} />
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+        sx={{
+          margin: `2rem auto 4rem`,
+          maxWidth: `90vw`,
+          width: 1,
+          // padding: 3,
+          // padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>
@@ -41,11 +45,11 @@ const Layout = ({ children }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
