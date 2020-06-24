@@ -1,13 +1,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
+// import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Global } from '@emotion/core';
-
 import useSiteMetadata from '../hooks/use-sitemetadata';
 
-import Header from './header';
+import Header from './Header';
+import Footer from './Footer';
 // import './layout.css';
 
 const Layout = ({ children }) => {
@@ -19,6 +20,9 @@ const Layout = ({ children }) => {
         styles={theme => ({
           '*': {
             boxSizing: 'border-box',
+          },
+          body: {
+            margin: 0,
           },
         })}
       />
@@ -33,17 +37,12 @@ const Layout = ({ children }) => {
           margin: `2rem auto 4rem`,
           maxWidth: `90vw`,
           width: 1,
-          // padding: 3,
-          // padding: `0 1.0875rem 1.45rem`,
+          minHeight: '100vh',
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <Footer />
     </>
   );
 };
