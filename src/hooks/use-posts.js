@@ -10,6 +10,8 @@ const usePosts = () => {
             author
             slug
             date
+            tags
+            tech
           }
           excerpt
         }
@@ -23,6 +25,8 @@ const usePosts = () => {
     slug: post.frontmatter.slug,
     excerpt: post.excerpt,
     date: post.frontmatter.date,
+    tags: post.frontmatter.tags,
+    tech: post.frontmatter.tech,
   }));
 };
 

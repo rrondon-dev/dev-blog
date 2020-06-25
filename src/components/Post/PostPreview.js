@@ -4,11 +4,12 @@ import { jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 
 import { PostDate } from './index';
-import { ReadMoreLink } from '../Link';
+import { ReadMoreLink, TagLink } from '../Link';
 
 function PostItem(props) {
   const { post } = props;
   const title = post.title;
+  const tags = post.tags ? post.tags.split(',') : [];
   console.log(post);
 
   return (
@@ -23,6 +24,7 @@ function PostItem(props) {
               '& a': {
                 textDecoration: 'none',
                 color: 'text',
+                transition: 'color .3s',
               },
               '& a:hover': {
                 color: 'primary',
@@ -59,8 +61,14 @@ function PostItem(props) {
               JS
             </div>
             <div sx={{ display: 'flex', alignItems: 'center' }}>
-              <span>Tags:</span>
-              <span>JavaScript</span>
+              {tags.map((tag, index) => {
+                const parsedTag = tag.trim().toLowerCase();
+                return (
+                  <TagLink key={parsedTag} tag={parsedTag} position={index}>
+                    {tag}
+                  </TagLink>
+                );
+              })}
             </div>
           </div>
         </section>

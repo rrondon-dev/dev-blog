@@ -1,9 +1,9 @@
 export default {
   fonts: {
     heading:
-      '-apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif',
+      'Helvetica Neue, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, sans-serif',
     body:
-      '-apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif',
+      'Helvetica Neue, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, sans-serif',
   },
   colors: {
     text: '#212121',
@@ -12,6 +12,8 @@ export default {
     background: '#fff',
     primary: 'hsl(346, 100%, 40%)',
     secondary: 'hsl(198, 84%, 76%)',
+    // 198°, 84%, 43%
+    // #1292ca
   },
   fontWeights: {
     body: 400,
