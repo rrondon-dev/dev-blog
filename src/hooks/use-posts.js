@@ -11,7 +11,6 @@ const usePosts = () => {
             slug
             date
             tags
-            tech
           }
           excerpt
         }
@@ -26,7 +25,6 @@ const usePosts = () => {
     excerpt: post.excerpt,
     date: post.frontmatter.date,
     tags: post.frontmatter.tags,
-    tech: post.frontmatter.tech,
   }));
 };
 

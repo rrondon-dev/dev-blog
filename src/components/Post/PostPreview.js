@@ -10,7 +10,6 @@ function PostItem(props) {
   const { post } = props;
   const title = post.title;
   const tags = post.tags ? post.tags.split(',') : [];
-  console.log(post);
 
   return (
     <article sx={{ marginBottom: 6 }}>
@@ -45,21 +44,7 @@ function PostItem(props) {
           <div>
             <ReadMoreLink slug={post.slug} />
           </div>
-          <div sx={{ marginTop: 3, display: 'flex' }}>
-            <div
-              sx={{
-                borderRadius: '50%',
-                height: '50px',
-                width: '50px',
-                backgroundColor: '#dedede',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginRight: 2,
-              }}
-            >
-              JS
-            </div>
+          <div sx={{ marginTop: 2 }}>
             <div sx={{ display: 'flex', alignItems: 'center' }}>
               {tags.map((tag, index) => {
                 const parsedTag = tag.trim().toLowerCase();
