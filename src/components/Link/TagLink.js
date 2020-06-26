@@ -10,7 +10,7 @@ function TagLink(props) {
       {!!props.position && (
         <span
           sx={{
-            color: 'text',
+            color: 'textDemp',
             fontSize: 1,
             lineHeight: 'body',
             marginRight: 0,
@@ -23,13 +23,17 @@ function TagLink(props) {
         to={props.tag}
         sx={{
           textDecoration: 'none',
-          color: 'text',
+          color: 'textDemp',
           fontSize: 1,
           lineHeight: 'body',
           borderBottomWidth: '2px',
           borderBottomStyle: 'solid',
           borderBottomColor: 'secondary',
           marginRight: 0,
+          '&:hover': {
+            color: 'text',
+            cursor: 'pointer',
+          },
         }}
       >
         {props.children}
