@@ -1,7 +1,8 @@
 /** @jsx jsx */
-// import { Link } from 'gatsby';
-import { jsx } from 'theme-ui';
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { jsx } from 'theme-ui';
+// import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 function TagLink(props) {

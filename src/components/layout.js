@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-// import { Link } from 'gatsby';
+import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Global } from '@emotion/core';
@@ -9,7 +9,6 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 
 import Header from './Header';
 import Footer from './Footer';
-// import './layout.css';
 
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();

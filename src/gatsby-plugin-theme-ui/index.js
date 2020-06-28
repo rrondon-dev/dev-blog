@@ -6,7 +6,8 @@ export default {
       'Helvetica Neue, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, sans-serif',
   },
   colors: {
-    text: '#212121',
+    // text: '#212121',
+    text: '#283237',
     textDemp: 'rgba(0,0,0,.5)',
     bgGray: '#ccc',
     background: '#fff',
