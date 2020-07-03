@@ -3,10 +3,10 @@
 import { jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 
-import { PostDate } from './index';
-import { ReadMoreLink, TagLink } from '../Link';
+import { PostTitle, PostDate, PostTags } from './index';
+import { ReadMoreLink } from '../Link';
 
-function PostItem(props) {
+function PostPreview(props) {
   const { post } = props;
   const title = post.title;
   const tags = post.tags ? post.tags.split(',') : [];
@@ -15,23 +15,9 @@ function PostItem(props) {
     <article sx={{ marginBottom: 6 }}>
       <section>
         <header>
-          <h2
-            sx={{
-              marginTop: '0px',
-              marginBottom: '0px',
-              fontSize: 5,
-              '& a': {
-                textDecoration: 'none',
-                color: 'text',
-                transition: 'color .3s',
-              },
-              '& a:hover': {
-                color: 'primary',
-              },
-            }}
-          >
+          <PostTitle>
             <Link to={post.slug}>{title}</Link>
-          </h2>
+          </PostTitle>
           <PostDate date={post.date} />
         </header>
         <section>
@@ -45,16 +31,7 @@ function PostItem(props) {
             <ReadMoreLink slug={post.slug} />
           </div>
           <div sx={{ marginTop: 2 }}>
-            <div sx={{ display: 'flex', alignItems: 'center' }}>
-              {tags.map((tag, index) => {
-                const parsedTag = tag.trim().toLowerCase();
-                return (
-                  <TagLink key={parsedTag} tag={parsedTag} position={index}>
-                    {tag}
-                  </TagLink>
-                );
-              })}
-            </div>
+            <PostTags tags={tags} />
           </div>
         </section>
       </section>
@@ -62,4 +39,4 @@ function PostItem(props) {
   );
 }
 
-export default PostItem;
+export default PostPreview;

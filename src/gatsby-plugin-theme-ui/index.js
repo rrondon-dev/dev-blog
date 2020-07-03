@@ -28,7 +28,7 @@ export default {
     heading: 1.1,
   },
   space: [4, 8, 12, 16, 24, 32, 48],
-  sizes: [400, 720, 960, 1200],
+  sizes: [400, 750, 960, 1200],
   radii: [4, 8, 12, 16],
   styles: {
     root: {

@@ -11,6 +11,14 @@ const usePosts = () => {
             slug
             date
             tags
+            description
+            image {
+              sharp: childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           excerpt
         }
@@ -25,6 +33,8 @@ const usePosts = () => {
     excerpt: post.excerpt,
     date: post.frontmatter.date,
     tags: post.frontmatter.tags,
+    description: post.frontmatter.description,
+    image: post.frontmatter.image.sharp,
   }));
 };
 
