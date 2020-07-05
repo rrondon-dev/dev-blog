@@ -6,11 +6,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Global } from '@emotion/core';
 import useSiteMetadata from '../hooks/use-sitemetadata';
+import 'typeface-open-sans';
 
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ children }) => {
+const Layout = ({ hero, children }) => {
   const { title, description } = useSiteMetadata();
 
   return (
@@ -31,16 +32,19 @@ const Layout = ({ children }) => {
         <meta name="description" content={description} />
       </Helmet>
       <Header siteTitle={title} />
-      <div
-        sx={{
-          margin: `2rem auto 4rem`,
-          maxWidth: `90vw`,
-          width: 1,
-          minHeight: '100vh',
-        }}
-      >
-        <main>{children}</main>
-      </div>
+      <>
+        {hero && hero()}
+        <main
+          sx={{
+            margin: `2rem auto 4rem`,
+            maxWidth: `90vw`,
+            width: 1,
+            minHeight: '100vh',
+          }}
+        >
+          {children}
+        </main>
+      </>
       <Footer />
     </>
   );

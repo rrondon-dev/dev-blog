@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => (
         margin: `0 auto`,
         display: 'flex',
         justifyContent: 'space-between',
-        padding: '1rem calc((100vw - 960px - 0.5rem) / 2)',
+        padding: '1.5rem calc((100vw - 960px - 0.5rem) / 2)',
         backgroundColor: 'background',
       }}
     >
