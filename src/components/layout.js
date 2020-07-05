@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 import { Global } from '@emotion/core';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import 'typeface-open-sans';
+import 'typeface-noto-serif';
 
 import Header from './Header';
 import Footer from './Footer';

@@ -24,7 +24,9 @@ function Hero() {
         }}
       >
         <div>
-          <h1>"A journey of a thousand miles starts beneath one's feet"</h1>
+          <h1 sx={{ fontFamily: 'heading', fontWeight: 'bodyH', fontSize: 6 }}>
+            "A journey of a thousand miles starts beneath one's feet"
+          </h1>
         </div>
       </div>
     </section>
@@ -39,7 +41,15 @@ const IndexPage = () => {
     <Layout hero={() => <Hero />}>
       <SEO title="Home" />
       <section sx={{ marginY: 6 }}>
-        <h1 sx={{ fontSize: 6, marginTop: '0px', marginBottom: 5 }}>
+        <h1
+          sx={{
+            fontSize: 6,
+            marginTop: '0px',
+            marginBottom: 5,
+            fontFamily: 'heading',
+            fontWeight: 'bodyH',
+          }}
+        >
           Recent Posts
         </h1>
         <div sx={{ paddingX: 3 }}>

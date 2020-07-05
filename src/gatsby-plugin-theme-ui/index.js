@@ -1,7 +1,7 @@
 export default {
   fonts: {
     heading:
-      'Open Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, sans-serif',
+      'Noto Serif, Open Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, sans-serif',
     body:
       'Open Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, sans-serif',
   },
@@ -36,16 +36,16 @@ export default {
       fontWeight: 'body',
     },
     h1: {
-      fontSize: 6,
+      fontSize: 7,
       fontFamily: 'heading',
-      fontWeight: 'heading',
+      fontWeight: 'bodyH',
       color: 'heading',
       mt: '0px',
       mb: 1,
     },
     h2: {
       fontSize: 5,
-      fontFamily: 'heading',
+      fontFamily: 'body',
       fontWeight: 'heading',
       lineHeight: 'heading',
       color: 'heading',

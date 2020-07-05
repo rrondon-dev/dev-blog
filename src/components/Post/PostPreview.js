@@ -16,7 +16,7 @@ function PostPreview(props) {
       <section>
         <header>
           <PostTitle>
-            <Link to={post.slug}>{title}</Link>
+            <Link to={`blog/${post.slug}`}>{title}</Link>
           </PostTitle>
           <PostDate date={post.date} />
         </header>
@@ -28,7 +28,7 @@ function PostPreview(props) {
             sx={{ fontSize: 3, marginY: 1 }}
           />
           <div>
-            <ReadMoreLink slug={post.slug} />
+            <ReadMoreLink slug={`blog/${post.slug}`} />
           </div>
           <div sx={{ marginTop: 2 }}>
             <PostTags tags={tags} />

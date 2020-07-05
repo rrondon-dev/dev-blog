@@ -8,8 +8,7 @@ import { PostCard } from '../components/Post';
 
 function Blog() {
   const posts = usePosts();
-  console.log(posts);
-
+  // console.log(posts);
   return (
     <Layout>
       <section
@@ -21,7 +20,7 @@ function Blog() {
         }}
       >
         {posts.map(post => (
-          <PostCard post={post} />
+          <PostCard key={post.slug} post={post} />
         ))}
       </section>
     </Layout>

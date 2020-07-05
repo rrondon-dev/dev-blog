@@ -31,7 +31,6 @@ export const query = graphql`
 
 const Post = ({ data: { mdx: post } }) => {
   console.log(post);
-
   return (
     <Layout>
       <SEO
@@ -55,7 +54,7 @@ const Post = ({ data: { mdx: post } }) => {
           sx={{
             h2: {
               fontSize: 5,
-              fontFamily: 'heading',
+              fontFamily: 'body',
               fontWeight: 'heading',
               lineHeight: 'heading',
               color: 'heading',
