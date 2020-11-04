@@ -1,7 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-function PostTitle(props) {
+interface IPostTitleProps {
+  children: React.ReactNode;
+}
+
+const PostTitle: React.FC<IPostTitleProps> = ({ children }) => {
   return (
     <h2
       sx={{
@@ -20,9 +24,9 @@ function PostTitle(props) {
         },
       }}
     >
-      {props.children}
+      {children}
     </h2>
   );
-}
+};
 
 export default PostTitle;

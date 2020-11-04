@@ -7,6 +7,7 @@ import Image from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { PostDate } from '../components/Post';
+import { formatESLongMonth } from '../utils/dateFormatter';
 
 export const query = graphql`
   query($slug: String!) {
@@ -39,7 +40,6 @@ const Post = ({ data: { mdx: postData } }) => {
     body: postData.body,
   };
 
-  // console.log(post);
   return (
     <Layout>
       <SEO title={post.title} description={post.description || post.excerpt} />
@@ -47,7 +47,7 @@ const Post = ({ data: { mdx: postData } }) => {
         <header>
           <div sx={{ textAlign: 'center', mb: 4 }}>
             <Styled.h1>{post.title}</Styled.h1>
-            <PostDate date={post.date} />
+            <PostDate date={post.date} formatter={formatESLongMonth} />
           </div>
         </header>
         <div sx={{ marginY: 4 }}>

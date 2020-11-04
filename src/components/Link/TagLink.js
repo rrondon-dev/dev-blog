@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 // import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 function TagLink(props) {
   return (
@@ -43,9 +43,9 @@ function TagLink(props) {
   );
 }
 
-TagLink.propTypes = {
-  tag: PropTypes.string.isRequired,
-  position: PropTypes.number,
-};
+// TagLink.propTypes = {
+//   tag: PropTypes.string.isRequired,
+//   position: PropTypes.number,
+// };
 
 export default TagLink;

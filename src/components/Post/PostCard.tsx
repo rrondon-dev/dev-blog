@@ -3,8 +3,14 @@ import { jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import { PostDate, PostTags, PostTitle } from './index';
+import { formatESLongMonth } from '../../utils/dateFormatter';
+import { IPost } from '../../types';
 
-function PostCard({ post }) {
+interface PostCard {
+  post: IPost;
+}
+
+const PostCard: React.FC<PostCard> = ({ post }) => {
   const tags = post.tags ? post.tags.split(',') : [];
 
   return (
@@ -30,7 +36,7 @@ function PostCard({ post }) {
       </header>
       <section>
         <div sx={{ marginY: 2 }}>
-          <PostDate date={post.date} />
+          <PostDate date={post.date} formatter={formatESLongMonth} />
         </div>
         <div sx={{ mb: 1 }}>
           <PostTitle>
@@ -42,6 +48,6 @@ function PostCard({ post }) {
       </section>
     </article>
   );
-}
+};
 
 export default PostCard;
