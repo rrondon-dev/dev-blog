@@ -27,7 +27,8 @@ function Footer() {
     <footer
       sx={{
         paddingY: 5,
-        backgroundColor: '#ededed',
+        backgroundColor: '#f6f6f4',
+        // backgroundColor: '#ededed',
       }}
     >
       <div
