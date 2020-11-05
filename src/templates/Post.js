@@ -5,8 +5,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Image from 'gatsby-image';
 
 import SEO from '../components/seo';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { PostDate } from '../components/Post';
+import { formatESLongMonth } from '../utils/dateFormatter';
 
 export const query = graphql`
   query($slug: String!) {
@@ -29,26 +30,28 @@ export const query = graphql`
   }
 `;
 
-const Post = ({ data: { mdx: post } }) => {
-  console.log(post);
+const Post = ({ data: { mdx: postData } }) => {
+  const post = {
+    title: postData.frontmatter.title,
+    description: postData.frontmatter.description,
+    excerpt: postData.excerpt,
+    date: postData.frontmatter.date,
+    image: postData.frontmatter.image.sharp.fluid,
+    body: postData.body,
+  };
+
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.title} description={post.description || post.excerpt} />
       <article>
         <header>
           <div sx={{ textAlign: 'center', mb: 4 }}>
-            <Styled.h1>{post.frontmatter.title}</Styled.h1>
-            <PostDate date={post.frontmatter.date} />
+            <Styled.h1>{post.title}</Styled.h1>
+            <PostDate date={post.date} formatter={formatESLongMonth} />
           </div>
         </header>
         <div sx={{ marginY: 4 }}>
-          <Image
-            fluid={post.frontmatter.image.sharp.fluid}
-            alt="square forms"
-          />
+          <Image fluid={post.image} alt="square forms" />
         </div>
         <section
           sx={{

@@ -5,10 +5,15 @@ import { Link } from 'gatsby';
 
 import { PostTitle, PostDate, PostTags } from './index';
 import { ReadMoreLink } from '../Link';
+import { formatESLongMonth } from '../../utils/dateFormatter';
+import { IPost } from '../../types';
 
-function PostPreview(props) {
-  const { post } = props;
-  const title = post.title;
+interface IPostPreviewProps {
+  post: IPost;
+}
+
+const PostPreview: React.FC<IPostPreviewProps> = ({ post }) => {
+  console.log(post);
   const tags = post.tags ? post.tags.split(',') : [];
 
   return (
@@ -16,9 +21,9 @@ function PostPreview(props) {
       <section>
         <header>
           <PostTitle>
-            <Link to={`blog/${post.slug}`}>{title}</Link>
+            <Link to={`blog/${post.slug}`}>{post.title}</Link>
           </PostTitle>
-          <PostDate date={post.date} />
+          <PostDate date={post.date} formatter={formatESLongMonth} />
         </header>
         <section>
           <p
@@ -37,6 +42,6 @@ function PostPreview(props) {
       </section>
     </article>
   );
-}
+};
 
 export default PostPreview;

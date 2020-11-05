@@ -3,9 +3,14 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 // import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
-function TagLink(props) {
+interface ITagLinkProps {
+  tag: string;
+  position: number;
+  children: React.ReactNode;
+}
+
+const TagLink: React.FC<ITagLinkProps> = (props) => {
   return (
     <>
       {!!props.position && (
@@ -41,11 +46,6 @@ function TagLink(props) {
       </span>
     </>
   );
-}
-
-TagLink.propTypes = {
-  tag: PropTypes.string.isRequired,
-  position: PropTypes.number,
 };
 
 export default TagLink;

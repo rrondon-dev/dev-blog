@@ -2,7 +2,12 @@
 import { Link } from 'gatsby';
 import { jsx } from 'theme-ui';
 
-function FooterLink(props) {
+interface IFooterLink {
+  to: string;
+  children: React.ReactNode;
+}
+
+const FooterLink: React.FC<IFooterLink> = (props) => {
   return (
     <Link
       to={props.to}
@@ -10,24 +15,25 @@ function FooterLink(props) {
         fontSize: 2,
         lineHeight: 'body',
         textDecoration: 'none',
-        color: 'text',
+        color: '#fff',
         transition: 'color .3s',
         '&:hover': {
-          color: 'primary',
+          color: 'secondary',
         },
       }}
     >
       {props.children}
     </Link>
   );
-}
+};
 
-function Footer() {
+const Footer: React.FC<any> = () => {
   return (
     <footer
       sx={{
         paddingY: 5,
-        backgroundColor: '#f6f6f4',
+        backgroundColor: 'darkBlue',
+        // backgroundColor: '#f6f6f4',
         // backgroundColor: '#ededed',
       }}
     >
@@ -54,6 +60,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

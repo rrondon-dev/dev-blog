@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { jsx } from 'theme-ui';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import usePosts from '../hooks/use-posts';
 import { PostPreview } from '../components/Post';
@@ -53,7 +53,7 @@ const IndexPage = () => {
           Recent Posts
         </h1>
         <div sx={{ paddingX: 3 }}>
-          {posts.map(post => (
+          {posts.map((post) => (
             <PostPreview key={post.slug} post={post} />
           ))}
         </div>
