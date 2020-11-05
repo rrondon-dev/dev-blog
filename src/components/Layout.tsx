@@ -2,7 +2,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { jsx } from 'theme-ui';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Global } from '@emotion/core';
 import useSiteMetadata from '../hooks/use-sitemetadata';
@@ -12,13 +11,18 @@ import 'typeface-noto-serif';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ hero, children }) => {
+interface ILayoutProps {
+  hero: () => React.ReactNode;
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<ILayoutProps> = ({ hero, children }) => {
   const { title, description } = useSiteMetadata();
 
   return (
     <>
       <Global
-        styles={theme => ({
+        styles={(theme) => ({
           '*': {
             boxSizing: 'border-box',
           },
@@ -49,10 +53,6 @@ const Layout = ({ hero, children }) => {
       <Footer />
     </>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

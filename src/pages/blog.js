@@ -3,7 +3,7 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 import usePosts from '../hooks/use-posts';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { PostCard } from '../components/Post';
 
 function Blog() {
@@ -19,7 +19,7 @@ function Blog() {
           flexWrap: 'wrap',
         }}
       >
-        {posts.map(post => (
+        {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}
       </section>

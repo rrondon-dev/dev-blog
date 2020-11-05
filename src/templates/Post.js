@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Image from 'gatsby-image';
 
 import SEO from '../components/seo';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { PostDate } from '../components/Post';
 import { formatESLongMonth } from '../utils/dateFormatter';
 

@@ -13,6 +13,7 @@ export default {
     background: '#fff',
     primary: 'hsl(346, 100%, 40%)',
     secondary: 'hsl(198, 84%, 76%)',
+    darkBlue: '#2b3540',
     // 198°, 84%, 43%
     // #1292ca
   },
